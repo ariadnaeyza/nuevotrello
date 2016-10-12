@@ -14,7 +14,7 @@ body {
 .d-inlineblock {
     display: inline-block;
 }
-.d-block {
+.d-block{
     display: block;
 }
 .d-none {
