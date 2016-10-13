@@ -12,6 +12,7 @@ TRELLO
 
 1. Mostrar en el HTML, el texto ingresado al dar click en el botón de "Guardar" del formulario (como si fuera título de la lista).
 2.  Debajo del título, mostrar el mensaje clickeable de "Añadir una tarjea".
+
 ![](http://2.1m.yt/3fqTium.png)
 
 ![](http://3.1m.yt/w8JDGCc.png)
