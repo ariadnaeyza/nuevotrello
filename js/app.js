@@ -8,14 +8,13 @@ function trello() {
     var nameList = document.getElementById("inputList");
     var btnSave = document.getElementById("buttonSave");
     
-    spanList.addEventListener("click", apareceForm);
-    
-    function apareceForm() {
+    spanList.addEventListener("click", function (e){
+        e.preventDefault();
+        
         spanList.style.display = "none";
         form.style.display = "block";
-
         nameList.focus();
-    }
+    });
 
     btnSave.addEventListener("click", function (e) {
         e.preventDefault();
@@ -25,8 +24,8 @@ function trello() {
         var tittleList = document.createElement("span");
         var enlaceAgregar = document.createElement("a");
 
-        tittleList.classList.add("d-block", "text-center");
-        enlaceAgregar.classList.add("d-block", "text-center");
+        tittleList.classList.add("d-block", "text-center", "tittleList");
+        enlaceAgregar.classList.add("d-block", "text-center", "cursor-pointer", "enlaceAgregar");
 
         tittleList.innerHTML = nameList.value;
         enlaceAgregar.innerHTML = "Agregar nueva tarea..."
@@ -36,11 +35,11 @@ function trello() {
         nameList.value = "";
 
         var contTarjeta = document.createElement("div");
-        contTarjeta.setAttribute("id", "contTarjeta");
+        contTarjeta.classList.add("contTarjeta");
 
         enlaceAgregar.parentElement.insertBefore(contTarjeta, enlaceAgregar.parentElement.children[3]);
         
-        //Se empieza agregar nuevas listas a la derecha
+        //Se llama a la funcion que agregara a las nuevas listas
         nuevaLista();
 
         enlaceAgregar.addEventListener("click", function (e) {
@@ -53,25 +52,28 @@ function trello() {
 
             newForm.classList.add("newForm");
             newTextArea.classList.add("textareaList")
-            newBtn.classList.add("btn", "btn-default", "d-block");
+            newBtn.classList.add("btn", "btn-success", "d-block");
 
             contTarjeta.appendChild(newForm);
             newForm.appendChild(newTextArea);
             newForm.appendChild(newBtn);
             newTextArea.focus();
 
-            newBtn.innerHTML = "Guardar";
+            newBtn.innerHTML = "Añadir";
 
             newBtn.addEventListener("click", function (e) {
                 e.preventDefault();
                 newForm.style.display = "none";
-
-                var newTarjeta = document.createElement("span");
-                newTarjeta.innerHTML = newTextArea.value;
-                contTarjeta.appendChild(newTarjeta);
-                subContenedor.appendChild(enlaceAgregar);
-                newTarjeta.classList.add("newTarjeta", "d-block");
-                enlaceAgregar.style.display="inline-block";
+                
+                var newLista = document.createElement("div");
+                newLista.innerHTML = newTextArea.value;
+                
+                contTarjeta.appendChild(newLista);
+                newLista.appendChild(enlaceAgregar);
+                
+                newLista.classList.add("newTarjeta", "d-block");
+                enlaceAgregar.style.display="block";
+    
             });  
         });
     });
