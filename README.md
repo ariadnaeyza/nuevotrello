@@ -1,5 +1,4 @@
 TRELLO
-TRELLO
 ======
 
 ## Versión 0.0.1
@@ -25,7 +24,7 @@ TRELLO
 
 ![verión-03-1](http://4.1m.yt/D0onsNy.png)
 
-##Versión 0.0.4 
+## Versión 0.0.4 
 
 1.  Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus para poder escribir directamente el nombre de la lista.
 2.  Dar click al mensaje "Añadir una tarjeta" y mostrar e formulario para agregar la tarjeta (Nota: El ingreso de texto es mediante un textarea).
@@ -47,3 +46,4 @@ TRELLO
 1. Asegurar la funcionalidad de poder agregar múltiples listas y tarjetas.
 
 ![versión-06-01](http://1.1m.yt/xh0Wavq.png)
+
