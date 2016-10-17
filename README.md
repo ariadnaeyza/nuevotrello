@@ -44,3 +44,8 @@ TRELLO
 ![versión-05-1](http://2.1m.yt/CMRMkge.png)
 
 
+## VERSIÓN 0.0.6
+
+1. Asegurar la funcionalidad de poder agregar múltiples listas y tarjetas.
+
+![versión-06-01](http://1.1m.yt/xh0Wavq.png)
