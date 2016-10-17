@@ -8,12 +8,14 @@ function trello() {
     var nameList = document.getElementById("inputList");
     var btnSave = document.getElementById("buttonSave");
     
+    
     spanList.addEventListener("click", function (e){
         e.preventDefault();
         
         spanList.style.display = "none";
         form.style.display = "block";
         nameList.focus();
+        
     });
 
     btnSave.addEventListener("click", function (e) {
@@ -39,7 +41,7 @@ function trello() {
 
         enlaceAgregar.parentElement.insertBefore(contTarjeta, enlaceAgregar.parentElement.children[3]);
         
-        //Se llama a la funcion que agregara a las nuevas listas
+        //Se empieza agregar nuevas listas a la derecha
         nuevaLista();
 
         enlaceAgregar.addEventListener("click", function (e) {
@@ -65,13 +67,15 @@ function trello() {
                 e.preventDefault();
                 newForm.style.display = "none";
                 
-                var newLista = document.createElement("div");
-                newLista.innerHTML = newTextArea.value;
+                var newTarea = document.createElement("div");
                 
-                contTarjeta.appendChild(newLista);
-                newLista.appendChild(enlaceAgregar);
+                newTarea.innerHTML = newTextArea.value;
                 
-                newLista.classList.add("newTarjeta", "d-block");
+                contTarjeta.appendChild(newTarea);
+                contTarjeta.appendChild(enlaceAgregar);
+                
+                newTarea.classList.add("newTarea", "d-block");
+                
                 enlaceAgregar.style.display="block";
     
             });  

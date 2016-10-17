@@ -27,6 +27,7 @@ body {
 }
 #spanList:hover{
     background-color: rgba(255, 255, 255, 0.14);
+    border-radius: 5px;
 }
 .barra{
     background-color: black;
@@ -37,6 +38,7 @@ body {
 /*-------JS-------*/
 .tittleList{
     font-size: large;
+    word-wrap: break-word !important;
 }
 .cursor-pointer{
     cursor: pointer;
@@ -73,6 +75,10 @@ body {
 .newContenedor{
     vertical-align: top;
 }
-.newTarjeta {
+.newTarea {
     color: firebrick;
+    background-color: antiquewhite;
+    border-radius: 4px;
+    margin: 5px;
+    padding: 10px;
 }
