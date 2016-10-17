@@ -34,3 +34,13 @@ TRELLO
 
 ![versión-04-2](http://3.1m.yt/E5u0T3b.png)
 
+
+## VERSIÓN 0.0.5
+
+1. Al dar click en el botón de guardar al momento de añadir tarjeta, mostrar el mensaje de "Añadir tarjeta" debajo de la tarjeta añadida.
+
+![versión-05-1](http://4.1m.yt/5MjO9GN.png)
+
+![versión-05-1](http://2.1m.yt/CMRMkge.png)
+
+
