@@ -40,10 +40,27 @@ function trello() {
         newContenedor.appendChild(form);
         newContenedor.classList.add("newContenedor","d-inlineblock");
         spanList.style.display = "inline-block";
-        
+
         var contTarjeta = document.createElement("div");
         contTarjeta.classList.add("contTarjeta");
 
         enlaceAgregar.parentElement.insertBefore(contTarjeta, enlaceAgregar.parentElement.children[3]);
+        
+        enlaceAgregar.addEventListener("click", function (e) {
+            e.preventDefault(); 
+            //nuevoForm
+            enlaceAgregar.style.display = "none";
+
+            var newForm = document.createElement("form");
+            var newTextArea = document.createElement("textarea");
+
+            newForm.classList.add("newForm");
+            newTextArea.classList.add("textareaList")
+
+            contTarjeta.appendChild(newForm);
+            newForm.appendChild(newTextArea);
+            newForm.appendChild(newBtn);
+            newTextArea.focus();
+        });
     });
 }
