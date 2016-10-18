@@ -38,6 +38,7 @@ body {
 /*-------JS-------*/
 .tittleList{
     font-size: large;
+    word-wrap: break-word !important;
 }
 .cursor-pointer{
     cursor: pointer;
