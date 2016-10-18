@@ -7,19 +7,22 @@ function trello() {
     var form = document.getElementById("form");
     var nameList = document.getElementById("inputList");
     var btnSave = document.getElementById("buttonSave");
-    
-    var enlaceAgregar = document.createElement("a");
-    
-    function apareceForm(){
-        spanList.style.display="none";
-        form.style.display="block";
+
+    //apareceForm
+    spanList.addEventListener("click", function (e){
+        e.preventDefault();
+        spanList.style.display = "none";
+        form.style.display = "block";
         nameList.focus();
-    }    
-    
-    function mostrarForm(){
+    });
+
+    btnSave.addEventListener("click", function (e) {
+        e.preventDefault();
+        //tituloLista
         form.style.display = "none";
 
         var tittleList = document.createElement("span");
+        var enlaceAgregar = document.createElement("a");
 
         tittleList.classList.add("d-block", "text-center", "tittleList");
         enlaceAgregar.classList.add("d-block", "text-center", "cursor-pointer", "enlaceAgregar");
@@ -30,31 +33,17 @@ function trello() {
         spanList.parentElement.appendChild(tittleList);
         spanList.parentElement.appendChild(enlaceAgregar);
         nameList.value = "";
-    }
-    
-    function nuevaLista(){
-        var contTarjeta = document.createElement("div");
-        contTarjeta.classList.add("contTarjeta");
-
-        enlaceAgregar.parentElement.insertBefore(contTarjeta, enlaceAgregar.parentElement.children[3]);
-        
+        //Se empieza agregar nuevas listas a la derecha
         var newContenedor = document.createElement("div");
         contenedor.appendChild(newContenedor);
         newContenedor.appendChild(spanList);
         newContenedor.appendChild(form);
         newContenedor.classList.add("newContenedor","d-inlineblock");
         spanList.style.display = "inline-block";
-    }
-    
-    spanList.addEventListener("click", function (e){
-        e.preventDefault();
-        apareceForm();
+        
+        var contTarjeta = document.createElement("div");
+        contTarjeta.classList.add("contTarjeta");
 
-    });
-
-    btnSave.addEventListener("click", function (e) {
-        e.preventDefault();
-        mostrarForm();
-        nuevaLista();
+        enlaceAgregar.parentElement.insertBefore(contTarjeta, enlaceAgregar.parentElement.children[3]);
     });
 }
