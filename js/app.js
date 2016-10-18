@@ -40,7 +40,7 @@ function trello() {
         newContenedor.appendChild(form);
         newContenedor.classList.add("newContenedor","d-inlineblock");
         spanList.style.display = "inline-block";
-        
+
         var contTarjeta = document.createElement("div");
         contTarjeta.classList.add("contTarjeta");
 
