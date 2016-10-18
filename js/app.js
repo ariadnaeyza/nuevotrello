@@ -8,23 +8,18 @@ function trello() {
     var nameList = document.getElementById("inputList");
     var btnSave = document.getElementById("buttonSave");
     
+    var enlaceAgregar = document.createElement("a");
     
-    spanList.addEventListener("click", function (e){
-        e.preventDefault();
-        
-        spanList.style.display = "none";
-        form.style.display = "block";
+    function apareceForm(){
+        spanList.style.display="none";
+        form.style.display="block";
         nameList.focus();
-        
-    });
-
-    btnSave.addEventListener("click", function (e) {
-        e.preventDefault();
-
+    }    
+    
+    function mostrarForm(){
         form.style.display = "none";
 
         var tittleList = document.createElement("span");
-        var enlaceAgregar = document.createElement("a");
 
         tittleList.classList.add("d-block", "text-center", "tittleList");
         enlaceAgregar.classList.add("d-block", "text-center", "cursor-pointer", "enlaceAgregar");
@@ -35,54 +30,14 @@ function trello() {
         spanList.parentElement.appendChild(tittleList);
         spanList.parentElement.appendChild(enlaceAgregar);
         nameList.value = "";
-
+    }
+    
+    function nuevaLista(){
         var contTarjeta = document.createElement("div");
         contTarjeta.classList.add("contTarjeta");
 
         enlaceAgregar.parentElement.insertBefore(contTarjeta, enlaceAgregar.parentElement.children[3]);
         
-        //Se empieza agregar nuevas listas a la derecha
-        nuevaLista();
-
-        enlaceAgregar.addEventListener("click", function (e) {
-           e.preventDefault(); 
-            enlaceAgregar.style.display = "none";
-
-            var newForm = document.createElement("form");
-            var newTextArea = document.createElement("textarea");
-            var newBtn = document.createElement("button");
-
-            newForm.classList.add("newForm");
-            newTextArea.classList.add("textareaList")
-            newBtn.classList.add("btn", "btn-success", "d-block");
-
-            contTarjeta.appendChild(newForm);
-            newForm.appendChild(newTextArea);
-            newForm.appendChild(newBtn);
-            newTextArea.focus();
-
-            newBtn.innerHTML = "Añadir";
-
-            newBtn.addEventListener("click", function (e) {
-                e.preventDefault();
-                newForm.style.display = "none";
-                
-                var newTarea = document.createElement("div");
-                
-                newTarea.innerHTML = newTextArea.value;
-                
-                contTarjeta.appendChild(newTarea);
-                contTarjeta.appendChild(enlaceAgregar);
-                
-                newTarea.classList.add("newTarea", "d-block");
-                
-                enlaceAgregar.style.display="block";
-    
-            });  
-        });
-    });
-
-    function nuevaLista(){
         var newContenedor = document.createElement("div");
         contenedor.appendChild(newContenedor);
         newContenedor.appendChild(spanList);
@@ -90,4 +45,16 @@ function trello() {
         newContenedor.classList.add("newContenedor","d-inlineblock");
         spanList.style.display = "inline-block";
     }
+    
+    spanList.addEventListener("click", function (e){
+        e.preventDefault();
+        apareceForm();
+
+    });
+
+    btnSave.addEventListener("click", function (e) {
+        e.preventDefault();
+        mostrarForm();
+        nuevaLista();
+    });
 }
