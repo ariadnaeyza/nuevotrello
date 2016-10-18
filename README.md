@@ -22,4 +22,30 @@ TRELLO
 
 1. Una vez agregada la lista, mostrar el mensaje clickeable de "Añadir una lista" al lado de la lista agregada
 
-![verión-03-1](http://4.1m.yt/D0onsNy.png)
+![verión-03-1](http://1.1m.yt/SnieoDC.png)
+
+
+##Versión 0.0.4 
+
+1.  Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus para poder escribir directamente el nombre de la lista.
+2.  Dar click al mensaje "Añadir una tarjeta" y mostrar e formulario para agregar la tarjeta (Nota: El ingreso de texto es mediante un textarea).
+
+![versión-04-1](http://1.1m.yt/a6sS7KZ.png)
+
+![versión-04-2](http://3.1m.yt/E5u0T3b.png)
+
+
+## VERSIÓN 0.0.5
+
+1. Al dar click en el botón de guardar al momento de añadir tarjeta, mostrar el mensaje de "Añadir tarjeta" debajo de la tarjeta añadida.
+
+![versión-05-1](http://4.1m.yt/5MjO9GN.png)
+
+![versión-05-1](http://2.1m.yt/CMRMkge.png)
+
+
+## VERSIÓN 0.0.6
+
+1. Asegurar la funcionalidad de poder agregar múltiples listas y tarjetas.
+
+![versión-06-01](http://1.1m.yt/xh0Wavq.png)
