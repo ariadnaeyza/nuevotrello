@@ -63,9 +63,10 @@ function trello() {
             newTextArea.classList.add("textareaList")
             
             var newBtn = document.createElement("button");
-            newBtn.classList.add("btn", "btn-success", "d-block");
+            
             newBtn.innerHTML = "Añadir";
             newForm.appendChild(newBtn);
+            newBtn.classList.add("btn", "btn-success", "d-block");
             
             newBtn.addEventListener("click", function (e) {
                 e.preventDefault();
