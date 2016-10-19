@@ -26,10 +26,17 @@ TRELLO
 
 
 ##Versión 0.0.4 
+<<<<<<< HEAD
 
 1.  Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus para poder escribir directamente el nombre de la lista.
 2.  Dar click al mensaje "Añadir una tarjeta" y mostrar e formulario para agregar la tarjeta (Nota: El ingreso de texto es mediante un textarea).
 
+=======
+ 
+ 1.  Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus para poder escribir directamente el nombre de la lista.
+ 2.  Dar click al mensaje "Añadir una tarjeta" y mostrar e formulario para agregar la tarjeta (Nota: El ingreso de texto es mediante un textarea).
+ 
+>>>>>>> 7470a5e4eb9b439aa72d15d5481f301500f104cf
 ![versión-04-1](http://1.1m.yt/a6sS7KZ.png)
 
 ![versión-04-2](http://3.1m.yt/E5u0T3b.png)

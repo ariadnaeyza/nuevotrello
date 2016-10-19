@@ -6,7 +6,7 @@ function trello() {
     var form = document.getElementById("form");
     var nameList = document.getElementById("inputList");
     var btnSave = document.getElementById("buttonSave");    
-    
+
     //apareceForm
     spanList.addEventListener("click", function (e){
         e.preventDefault();
@@ -24,7 +24,7 @@ function trello() {
             btnSave.style.display = "inline-block";
             return false;
         }
-        
+
         //tituloLista
         form.style.display = "none";
 
@@ -37,10 +37,10 @@ function trello() {
         spanList.parentElement.appendChild(tittleList);
         spanList.parentElement.appendChild(enlaceAgregar);
         nameList.value = "";
-            
+
         tittleList.classList.add("d-block", "text-center", "tittleList");
         enlaceAgregar.classList.add("d-block", "text-center", "cursor-pointer", "enlaceAgregar");
-        
+
         //Se empieza agregar nuevas listas a la derecha
         var newContenedor = document.createElement("div");
         contenedor.appendChild(newContenedor);
@@ -53,7 +53,7 @@ function trello() {
         contTarjeta.classList.add("contTarjeta");
 
         enlaceAgregar.parentElement.insertBefore(contTarjeta, enlaceAgregar.parentElement.children[3]);
-        
+
         enlaceAgregar.addEventListener("click", function (e) {
             e.preventDefault(); 
             //nuevoForm con textarea
@@ -65,15 +65,15 @@ function trello() {
             contTarjeta.appendChild(newForm);
             newForm.appendChild(newTextArea);
             newTextArea.focus();
-            
+
             newForm.classList.add("newForm");
             newTextArea.classList.add("textareaList");
-            
+
             var newBtn = document.createElement("button");
             newBtn.innerHTML = "Añadir";
             newForm.appendChild(newBtn);
             newBtn.classList.add("btn", "btn-success", "d-block");
-            
+
             newBtn.addEventListener("click", function (e) {
                 e.preventDefault();
                 // Validar textarea
@@ -87,7 +87,7 @@ function trello() {
                 newForm.style.display = "none";
                 var newTarea = document.createElement("div");
                 newTarea.innerHTML = newTextArea.value;
-                
+
                 contTarjeta.appendChild(newTarea);
                 contTarjeta.appendChild(enlaceAgregar);
 
