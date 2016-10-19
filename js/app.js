@@ -2,11 +2,10 @@ window.addEventListener("load", trello);
 
 function trello() {
     var contenedor = document.getElementById("contAll");
-    var subContenedor = document.getElementById("contList");
     var spanList = document.getElementById("spanList");
     var form = document.getElementById("form");
     var nameList = document.getElementById("inputList");
-    var btnSave = document.getElementById("buttonSave");
+    var btnSave = document.getElementById("buttonSave");    
     
     //apareceForm
     spanList.addEventListener("click", function (e){
@@ -18,6 +17,14 @@ function trello() {
 
     btnSave.addEventListener("click", function (e) {
         e.preventDefault();
+        //VALIDAR TEXTAREA
+        if(nameList.value.length == 0){
+            alert("El textarea esta vacio");
+            nameList.style.display = "block";
+            btnSave.style.display = "inline-block";
+            return false;
+        }
+        
         //tituloLista
         form.style.display = "none";
 
@@ -30,7 +37,7 @@ function trello() {
         spanList.parentElement.appendChild(tittleList);
         spanList.parentElement.appendChild(enlaceAgregar);
         nameList.value = "";
-        
+            
         tittleList.classList.add("d-block", "text-center", "tittleList");
         enlaceAgregar.classList.add("d-block", "text-center", "cursor-pointer", "enlaceAgregar");
         
@@ -60,16 +67,22 @@ function trello() {
             newTextArea.focus();
             
             newForm.classList.add("newForm");
-            newTextArea.classList.add("textareaList")
+            newTextArea.classList.add("textareaList");
             
             var newBtn = document.createElement("button");
-            
             newBtn.innerHTML = "Añadir";
             newForm.appendChild(newBtn);
             newBtn.classList.add("btn", "btn-success", "d-block");
             
             newBtn.addEventListener("click", function (e) {
                 e.preventDefault();
+                // Validar textarea
+                if(newTextArea.value.length == 0){
+                    alert("El textarea esta vacio");
+                    newTextArea.style.display = "block";
+                    newBtn.style.display = "inline-block";
+                    return false;
+                }
                 //Guardando el contenido del nuevo form
                 newForm.style.display = "none";
                 var newTarea = document.createElement("div");
@@ -80,6 +93,14 @@ function trello() {
 
                 newTarea.classList.add("newTarea", "d-block");
                 enlaceAgregar.style.display="block";
+                
+                newTarea.addEventListener("drag", function(e){
+                    e.preventDefault();
+                    newTarea.setAttribute("draggable","true");
+                });
+                contTarjeta.addEventListener("drop", function(e){
+                    contTarjeta.setAttribute("ondragover","allowDrop(event)");
+                })
             });
         });
     });

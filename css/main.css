@@ -4,6 +4,7 @@
 body {
     background-image: url(../img/fondo.jpg);
     background-position: top;
+    white-space: nowrap;
 }
 
 /*------UTILIDADES------*/
@@ -50,7 +51,6 @@ body {
 #contList,
 .newContenedor{
     background-color: #FF8A6D;
-    position: relative;
     border-radius: 5px;
     color: white;
     margin: 70px 5px 0px 10px;
