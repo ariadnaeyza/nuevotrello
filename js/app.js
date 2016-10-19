@@ -93,14 +93,6 @@ function trello() {
 
                 newTarea.classList.add("newTarea", "d-block");
                 enlaceAgregar.style.display="block";
-                
-                newTarea.addEventListener("drag", function(e){
-                    e.preventDefault();
-                    newTarea.setAttribute("draggable","true");
-                });
-                contTarjeta.addEventListener("drop", function(e){
-                    contTarjeta.setAttribute("ondragover","allowDrop(event)");
-                })
             });
         });
     });
